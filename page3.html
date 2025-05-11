@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Сторінка 3</title>
+  <script>
+    window.onload = function () {
+      const links = document.querySelectorAll("a");
+      links.forEach(link => {
+        link.addEventListener("click", function (e) {
+          const confirmed = confirm("Перейти на сторінку " + link.getAttribute("href") + "?");
+          if (!confirmed) {
+            e.preventDefault();
+          }
+        });
+      });
+    };
+  </script>
+</head>
+<body>
+  <h1>Це третя сторінка</h1>
+  <p>Тут можна написати ще одну частину свого листа, спогади чи почуття.</p>
+  <a href="home.html">Повернутись на головну</a>
+  <br>
+  <a href="page2.html">Повернутись на сторінку 2</a>
+</body>
+</html>
