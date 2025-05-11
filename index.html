@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Вхід</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 100px; }
+    input { margin: 10px; padding: 10px; width: 200px; }
+    button { padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h2>Введіть ім’я та пароль</h2>
+  <input type="text" id="username" placeholder="Ваше ім’я"><br>
+  <input type="password" id="password" placeholder="Пароль"><br>
+  <button onclick="login()">Увійти</button>
+
+  <script>
+    function login() {
+      const name = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      
+      if (password === "пелюстка") {
+        window.location.href = "home.html";
+      } else {
+        alert("Невірний пароль.");
+      }
+    }
+  </script>
+</body>
+</html>
