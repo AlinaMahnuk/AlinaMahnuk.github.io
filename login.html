@@ -2,68 +2,93 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Вхід</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вхід на сайт</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
-      background-image: url('https://kartin.papik.pro/uploads/posts/2023-07/thumbs/1688787538_kartin-papik-pro-p-kartinki-krasivie-na-avu-dozhd-25.jpg');
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
-      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      position: relative;
     }
-    .login-container {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 30px;
+
+    .rain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://i.gifer.com/7PLX.gif');
+      background-size: cover;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .login-box {
+      position: relative;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
       border-radius: 15px;
+      color: white;
+      box-shadow: 0 0 10px #000;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
       text-align: center;
     }
-    input {
-      display: block;
+
+    .login-box input {
       width: 100%;
       padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      padding: 10px 20px;
+      margin-bottom: 15px;
       border: none;
-      background-color: #333;
+      border-radius: 5px;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
       color: white;
+      border: none;
       border-radius: 5px;
       cursor: pointer;
     }
-    .error {
-      color: red;
-      margin-top: 10px;
+
+    .login-box button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <h2>Вхід</h2>
-    <input type="text" id="username" placeholder="Ім'я">
-    <input type="password" id="password" placeholder="Пароль">
+  <div class="rain"></div>
+  <div class="login-box">
+    <h2>Вхід на сайт</h2>
+    <input type="text" id="username" placeholder="Ім'я користувача" />
+    <input type="password" id="password" placeholder="Пароль" />
     <button onclick="login()">Увійти</button>
-    <div class="error" id="error-message"></div>
   </div>
 
   <script>
     function login() {
       const username = document.getElementById("username").value.trim();
       const password = document.getElementById("password").value.trim();
-      const errorMessage = document.getElementById("error-message");
 
       if (username === "Аліна" && password === "27.07.2024") {
-        window.location.href = "main.html";
+        const logins = JSON.parse(localStorage.getItem("loginLogs") || "[]");
+        logins.push({ username, time: new Date().toLocaleString() });
+        localStorage.setItem("loginLogs", JSON.stringify(logins));
+        window.location.href = "home.html";
       } else {
-        errorMessage.textContent = "Неправильне імʼя або пароль.";
+        alert("Неправильне ім'я або пароль!");
       }
     }
   </script>
