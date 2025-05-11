@@ -1,31 +1,61 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
   <title>Вхід</title>
   <style>
-    body { font-family: Arial; text-align: center; margin-top: 100px; }
-    input { margin: 10px; padding: 8px; font-size: 16px; }
-    button { padding: 10px 20px; font-size: 16px; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-box {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    input[type="text"], input[type="password"] {
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-  <h2>Вхід на сайт</h2>
-  <input type="text" id="username" placeholder="Ім’я"><br>
-  <input type="password" id="password" placeholder="Пароль"><br>
-  <button onclick="login()">Увійти</button>
-
-  <script>
-    function login() {
-      const username = document.getElementById('username').value.trim();
-      const password = document.getElementById('password').value.trim();
-      
-      if (username === "Аліна" && password === "27.07.2024") {
-        window.location.href = "home.html"; // головна сторінка
-      } else {
-        alert("Невірне ім’я або пароль.");
-      }
-    }
-  </script>
-</body>
-</html>
+  <div class="login-box">
+    <h2>Введіть ім’я та пароль
