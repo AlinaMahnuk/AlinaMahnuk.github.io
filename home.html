@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Головна сторінка</title>
+  <style>
+    body { font-family: sans-serif; padding: 30px; }
+    a { display: block; margin: 20px 0; font-size: 20px; color: blue; text-decoration: underline; }
+  </style>
+  <script>
+    function confirmNavigation(event, link) {
+      event.preventDefault();
+      if (confirm(`Перейти на сторінку ${link.textContent}?`)) {
+        window.location.href = link.href;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Привіт, тут починається історія</h1>
+  <a href="page1.html" onclick="confirmNavigation(event, this)">Розділ 1: Спогади</a>
+  <a href="page2.html" onclick="confirmNavigation(event, this)">Розділ 2: Думки</a>
+  <a href="page3.html" onclick="confirmNavigation(event, this)">Розділ 3: Почуття</a>
+</body>
+</html>
