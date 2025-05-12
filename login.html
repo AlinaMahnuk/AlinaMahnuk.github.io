@@ -5,53 +5,45 @@
   <title>Вхід</title>
   <style>
     body {
+      margin: 0;
+      padding: 0;
       background-image: url('https://github.com/AlinaMahnuk/AlinaMahnuk.github.io/blob/main/%D0%A7%D0%B5%D0%BC-%D0%B6%D0%B5-%D1%81%D1%82%D1%80%D0%B0%D1%85-%D0%BE%D1%82-%D0%BB%D0%B8%D1%87%D0%B0%D0%B5%D1%82%D1%81%D1%8F-%D0%BE%D1%82-%D1%82%D1%80%D0%B5%D0%B2%D0%BE%D0%B3%D0%B8.-%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3-%D0%9A%D0%B8%D0%B5%D0%B2.png?raw=true');
       background-size: cover;
       background-position: center;
       font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
     }
-
-    .login-container {
-      background: rgba(255, 255, 255, 0.85);
+    .login-box {
+      background: rgba(0, 0, 0, 0.7);
       padding: 30px;
       border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      width: 300px;
+      margin: 150px auto;
+      color: white;
     }
-
-    input {
+    input[type="text"], input[type="password"] {
+      width: 100%;
       padding: 10px;
       margin: 10px 0;
-      width: 100%;
-      border: 1px solid #ccc;
+      border: none;
       border-radius: 5px;
     }
-
     button {
-      padding: 10px 20px;
-      background-color: #444;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
-
-    button:hover {
-      background-color: #000;
-    }
   </style>
 </head>
 <body>
-  <div class="login-container">
+  <div class="login-box">
     <h2>Вхід</h2>
-    <form onsubmit="return checkLogin(event)">
-      <input type="text" id="username" placeholder="Імʼя" required><br>
-      <input type="password" id="password" placeholder="Пароль" required><br>
+    <form onsubmit="checkLogin(event)">
+      <input type="text" id="username" placeholder="Імʼя" required>
+      <input type="password" id="password" placeholder="Пароль" required>
       <button type="submit">Увійти</button>
     </form>
   </div>
@@ -63,6 +55,7 @@
       var password = document.getElementById('password').value.trim();
 
       if (username === 'Аліна' && password === '27.07.2024') {
+        localStorage.setItem("access", "granted");
         window.location.href = 'home2.html';
       } else {
         alert('Неправильне імʼя або пароль.');
