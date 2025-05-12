@@ -1,65 +1,92 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Для тебе</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: 'Roboto Slab', serif;
       margin: 0;
-      padding: 0;
+      padding: 40px;
+      line-height: 1.6;
       background-image: url('https://github.com/AlinaMahnuk/AlinaMahnuk.github.io/blob/main/sweden-6834164_1280.jpg?raw=true');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      font-family: 'Poppins', sans-serif;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
+      color: #fff;
+      background-attachment: fixed;
     }
 
-    .container {
-      width: 90%;
+    .content {
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      padding: 30px;
       max-width: 800px;
+      margin: auto;
     }
 
-    .para {
-      border-radius: 10px;
-      margin-bottom: 15px;
-      padding: 15px;
+    .paragraph {
+      margin-bottom: 25px;
+      padding: 12px 18px;
+      border-radius: 8px;
     }
 
-    .para:nth-child(1) { background-color: rgba(255, 0, 0, 0.3); }
-    .para:nth-child(2) { background-color: rgba(0, 128, 255, 0.3); }
-    .para:nth-child(3) { background-color: rgba(0, 255, 128, 0.3); }
-    .para:nth-child(4) { background-color: rgba(255, 255, 0, 0.3); }
-    .para:nth-child(5) { background-color: rgba(255, 0, 255, 0.3); }
-    .para:nth-child(6) { background-color: rgba(128, 0, 255, 0.3); }
-    .para:nth-child(7) { background-color: rgba(0, 255, 255, 0.3); }
-    .para:nth-child(8) { background-color: rgba(255, 128, 0, 0.3); }
-    .para:nth-child(9) { background-color: rgba(100, 100, 100, 0.3); }
+    .p1 { background-color: rgba(255, 243, 205, 0.25); }
+    .p2 { background-color: rgba(209, 236, 241, 0.25); }
+    .p3 { background-color: rgba(248, 215, 218, 0.25); }
+    .p4 { background-color: rgba(212, 237, 218, 0.25); }
+    .p5 { background-color: rgba(226, 227, 229, 0.25); }
+
+    h1 {
+      font-weight: 600;
+      font-size: 26px;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 30px;
+    }
   </style>
   <script>
-    if (sessionStorage.getItem("loggedIn") !== "true") {
-      window.location.href = "login.html";
-    }
+    // Перевірка доступу
+    window.onload = function () {
+      const allowed = localStorage.getItem("access_granted");
+      if (allowed !== "true") {
+        window.location.href = "login.html"; // якщо не ввели логін — назад
+      }
+    };
   </script>
 </head>
 <body>
-  <div class="container">
-    <div class="para">о ж… якщо ти тут, то ти вгадала пароль. Або тобі не все одно?</div>
-    <div class="para">Я нарешті почув те голосове. Те саме, яке ти колись надіслала, просивши просто вислухати. Бути поруч. Подарувати трошки тепла.</div>
-    <div class="para">Тоді я не зміг. Я відреагував так, як не мав. Не страх, ні — недовіра. І, замість підтримати, я висміяв тебе.</div>
-    <div class="para">А тепер… я почув усе. Кожну емоцію, кожен подих, кожну краплю болю й надії. І тепер я бачу.</div>
-    <div class="para">Бачу, як ти ставала сильнішою, попри те, що тобі було страшно й боляче. Бачу, як ти тягнула нас на собі, навіть коли я вже віддалився.</div>
-    <div class="para">Бачу, як щиро ти старалася. І тепер я розумію: ти не була слабкою. Ти була сильною. Просто дуже самотньою.</div>
-    <div class="para">Мені дуже шкода, що я не побачив цього тоді. Що я не став тією людиною, яка тримає, а не тікає.</div>
-    <div class="para">Я щиро радий, якщо ти щаслива. Бо навіть якщо ми не поруч, я завжди хотів, щоб у тебе було добре.</div>
-    <div class="para">Бережи себе. Бо ти справді того варта.</div>
+  <div class="content">
+    <h1>о ж… якщо ти тут, то ти вгадала пароль. Або тобі не все одно?</h1>
+
+    <div class="paragraph p1">
+      Я нарешті почув те голосове...
+    </div>
+
+    <div class="paragraph p2">
+      Бачу, як ти ставала сильнішою...
+    </div>
+
+    <div class="paragraph p3">
+      Мені дуже шкода, що я не побачив...
+    </div>
+
+    <div class="paragraph p4">
+      Я був у кімнаті, виснажений...
+    </div>
+
+    <div class="paragraph p5">
+      Коли ти почала показувати себе...
+    </div>
+
+    <div class="paragraph p1">
+      Можливо, час усе витре...
+    </div>
+
+    <div class="paragraph p2">
+      Я щиро радий, якщо ти щаслива...
+    </div>
   </div>
 </body>
 </html>
