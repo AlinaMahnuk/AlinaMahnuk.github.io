@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -45,15 +46,36 @@
       text-align: center;
       margin-bottom: 30px;
     }
+
+    .logout-btn {
+      display: block;
+      margin: 30px auto 0;
+      padding: 10px 20px;
+      background-color: #ffffff30;
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .logout-btn:hover {
+      background-color: #ffffff50;
+    }
   </style>
   <script>
-    // Перевірка доступу з sessionStorage
+    // Перевірка доступу
     window.onload = function () {
-      const allowed = sessionStorage.getItem("loggedIn");
+      const allowed = localStorage.getItem("access_granted");
       if (allowed !== "true") {
-        window.location.href = "login.html"; // якщо не ввели логін — назад
+        window.location.href = "login.html"; // якщо не авторизовані — перекидає
       }
     };
+
+    function logout() {
+      localStorage.removeItem("access_granted");
+      window.location.href = "login.html";
+    }
   </script>
 </head>
 <body>
@@ -87,6 +109,8 @@
     <div class="paragraph p2">
       Я щиро радий, якщо ти щаслива...
     </div>
+
+    <button class="logout-btn" onclick="logout()">Вийти</button>
   </div>
 </body>
 </html>
