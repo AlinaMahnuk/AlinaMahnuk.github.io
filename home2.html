@@ -2,14 +2,14 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Для тебе</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 40px;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       background-image: url('https://github.com/AlinaMahnuk/AlinaMahnuk.github.io/blob/main/sweden-6834164_1280.jpg?raw=true');
       background-size: cover;
       background-position: center;
@@ -19,37 +19,39 @@
 
     .content p {
       margin-bottom: 20px;
-      font-size: 1.4em;
-      padding: 10px;
-      border-radius: 10px;
-      max-width: 800px;
-      background-color: rgba(0, 0, 0, 0.4);
+      font-size: 1.3em;
+      padding: 15px;
+      border-radius: 12px;
+      background-color: rgba(0, 0, 0, 0.5);
+      max-width: 850px;
     }
 
     .content p:nth-child(1) { color: #ffd700; }
     .content p:nth-child(2) { color: #ff69b4; }
     .content p:nth-child(3) { color: #87ceeb; }
-    .content p:nth-child(4) { color: #98fb98; }
-    .content p:nth-child(5) { color: #ffdead; }
-    .content p:nth-child(6) { color: #f08080; }
+    .content p:nth-child(4) { color: #90ee90; }
+    .content p:nth-child(5) { color: #f4a460; }
+    .content p:nth-child(6) { color: #ffb6c1; }
+    .content p:nth-child(7) { color: #eeeeee; }
+    .content p:nth-child(8) { color: #ffa07a; }
   </style>
 </head>
 <body>
   <script>
-    // Перевірка, чи користувач увійшов
-    const loggedIn = sessionStorage.getItem("loggedIn");
-    if (loggedIn !== "true") {
+    if (sessionStorage.getItem("loggedIn") !== "true") {
       window.location.href = "login.html";
     }
   </script>
 
   <div class="content">
     <p>о ж… якщо ти тут, то ти вгадала пароль. Або тобі не все одно?</p>
-    <p>Я нарешті почув те голосове. Те саме, яке ти колись надіслала, просивши просто вислухати. Бути поруч. Подарувати трошки тепла...</p>
-    <p>Бачу, як ти ставала сильнішою, попри те, що тобі було страшно й боляче...</p>
-    <p>Я був у кімнаті, виснажений після тренувань... А потім — дрібниця: ти пообіцяла шоколадку...</p>
-    <p>Коли ти почала показувати себе справжню — неідеальну, вразливу... я злякався. Не тебе — себе.</p>
-    <p>Я щиро радий, якщо ти щаслива. Бо навіть якщо ми не поруч, я завжди хотів, щоб у тебе було добре. Бережи себе. Бо ти справді того варта.</p>
+    <p>Я нарешті почув те голосове. Те саме, яке ти колись надіслала, просивши просто вислухати. Бути поруч. Подарувати трошки тепла.</p>
+    <p>Тоді я не зміг. Я відреагував так, як не мав. Не страх, ні — недовіра. І, замість підтримати, я висміяв тебе.</p>
+    <p>А тепер… я почув усе. Кожну емоцію, кожен подих, кожну краплю болю й надії. І тепер я бачу.</p>
+    <p>Я був у кімнаті, виснажений після тренувань, рутиною, життям. Через вікно почув твій сміх і голос, і тоді виглянув...</p>
+    <p>Коли ти почала показувати себе справжню — неідеальну, вразливу, з болем і сумнівами — я злякався. Не тебе — себе.</p>
+    <p>Можливо, час усе витре. Можливо, спогади зітруться або перетворяться на тишу...</p>
+    <p>Бережи себе. Бо ти справді того варта.</p>
   </div>
 </body>
 </html>
