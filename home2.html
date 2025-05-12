@@ -14,8 +14,8 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      color: #fff;
       background-attachment: fixed;
+      color: #fff;
     }
 
     .content {
@@ -47,9 +47,9 @@
     }
   </style>
   <script>
-    // Перевірка доступу
+    // Перевірка доступу з sessionStorage
     window.onload = function () {
-      const allowed = localStorage.getItem("access_granted");
+      const allowed = sessionStorage.getItem("loggedIn");
       if (allowed !== "true") {
         window.location.href = "login.html"; // якщо не ввели логін — назад
       }
