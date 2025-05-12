@@ -2,57 +2,54 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Для тебе</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 40px;
-      font-family: 'Comfortaa', cursive;
+      font-family: 'Cormorant Garamond', serif;
       background-image: url('https://github.com/AlinaMahnuk/AlinaMahnuk.github.io/blob/main/sweden-6834164_1280.jpg?raw=true');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      color: #333;
+      color: white;
     }
-    .container {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 30px;
+
+    .content p {
+      margin-bottom: 20px;
+      font-size: 1.4em;
+      padding: 10px;
       border-radius: 10px;
       max-width: 800px;
-      margin: auto;
-      box-shadow: 0 0 20px #00000050;
+      background-color: rgba(0, 0, 0, 0.4);
     }
-    p {
-      margin: 20px 0;
-      font-size: 18px;
-    }
-    p:nth-child(odd) { color: #d94f4f; }
-    p:nth-child(even) { color: #3a5fcd; }
+
+    .content p:nth-child(1) { color: #ffd700; }
+    .content p:nth-child(2) { color: #ff69b4; }
+    .content p:nth-child(3) { color: #87ceeb; }
+    .content p:nth-child(4) { color: #98fb98; }
+    .content p:nth-child(5) { color: #ffdead; }
+    .content p:nth-child(6) { color: #f08080; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <p>о ж… якщо ти тут, то ти вгадала пароль. Або тобі не все одно?</p>
-    <p>Я нарешті почув те голосове. Те саме, яке ти колись надіслала, просивши просто вислухати...</p>
-    <p>Тоді я не зміг. Я відреагував так, як не мав. Не страх, ні — недовіра...</p>
-    <p>А тепер… я почув усе. Кожну емоцію, кожен подих, кожну краплю болю й надії...</p>
-    <p>Бачу, як ти ставала сильнішою, попри те, що тобі було страшно й боляче...</p>
-    <p>Мені дуже шкода, що я не побачив цього тоді. Що я не став тією людиною, яка тримає...</p>
-    <p>Я був у кімнаті, виснажений після тренувань, рутиною, життям. Через вікно почув твій сміх...</p>
-    <p>Кожен день поряд з тобою став подихом повітря, якого мені так не вистачало...</p>
-    <p>Коли ти почала показувати себе справжню — неідеальну, вразливу — я злякався...</p>
-    <p>Можливо, час усе витре. Але поки спогади ще зі мною — я тримаю їх обережно...</p>
-    <p>Я щиро радий, якщо ти щаслива. Бо ти справді того варта.</p>
-  </div>
-
   <script>
-    // Перевірка: чи користувач пройшов логін
-    const isLoggedIn = sessionStorage.getItem("isLoggedIn");
-    if (!isLoggedIn || isLoggedIn !== "true") {
+    // Перевірка, чи користувач увійшов
+    const loggedIn = sessionStorage.getItem("loggedIn");
+    if (loggedIn !== "true") {
       window.location.href = "login.html";
     }
   </script>
+
+  <div class="content">
+    <p>о ж… якщо ти тут, то ти вгадала пароль. Або тобі не все одно?</p>
+    <p>Я нарешті почув те голосове. Те саме, яке ти колись надіслала, просивши просто вислухати. Бути поруч. Подарувати трошки тепла...</p>
+    <p>Бачу, як ти ставала сильнішою, попри те, що тобі було страшно й боляче...</p>
+    <p>Я був у кімнаті, виснажений після тренувань... А потім — дрібниця: ти пообіцяла шоколадку...</p>
+    <p>Коли ти почала показувати себе справжню — неідеальну, вразливу... я злякався. Не тебе — себе.</p>
+    <p>Я щиро радий, якщо ти щаслива. Бо навіть якщо ми не поруч, я завжди хотів, щоб у тебе було добре. Бережи себе. Бо ти справді того варта.</p>
+  </div>
 </body>
 </html>
