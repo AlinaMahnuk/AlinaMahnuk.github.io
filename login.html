@@ -16,6 +16,7 @@
       align-items: center;
       justify-content: center;
     }
+
     .login-box {
       background-color: rgba(255, 255, 255, 0.85);
       padding: 30px;
@@ -23,6 +24,7 @@
       text-align: center;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
+
     input {
       padding: 10px;
       margin: 10px;
@@ -30,6 +32,7 @@
       border: 1px solid #aaa;
       border-radius: 5px;
     }
+
     button {
       padding: 10px 20px;
       border: none;
@@ -39,13 +42,15 @@
       cursor: pointer;
       border-radius: 5px;
     }
+
     button:hover {
       background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <div class="login-box">
+
+  <div class="login-box" id="login-box">
     <h2>Вхід</h2>
     <input type="text" id="username" placeholder="Ім'я"><br>
     <input type="password" id="password" placeholder="Пароль"><br>
@@ -54,16 +59,23 @@
   </div>
 
   <script>
+    // Автоматичний перехід, якщо вже був вхід
+    if (localStorage.getItem("authenticated") === "true") {
+      window.location.href = "home2.html";
+    }
+
     function login() {
       const username = document.getElementById('username').value;
       const password = document.getElementById('password').value;
 
       if (username === "Аліна" && password === "27.07.2024") {
+        localStorage.setItem("authenticated", "true");
         window.location.href = "home2.html";
       } else {
         document.getElementById('message').innerText = "Невірне ім'я або пароль.";
       }
     }
   </script>
+
 </body>
 </html>
