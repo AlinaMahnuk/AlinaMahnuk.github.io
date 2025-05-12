@@ -1,81 +1,85 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Вхід</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-image: url('https://github.com/AlinaMahnuk/AlinaMahnuk.github.io/blob/main/sweden-6834164_1280.jpg?raw=true');
+      background-image: url('https://github.com/AlinaMahnuk/AlinaMahnuk.github.io/blob/main/%D0%A7%D0%B5%D0%BC-%D0%B6%D0%B5-%D1%81%D1%82%D1%80%D0%B0%D1%85-%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%B0%D0%B5%D1%82%D1%81%D1%8F-%D0%BE%D1%82-%D1%82%D1%80%D0%B5%D0%B2%D0%BE%D0%B3%D0%B8.-%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3-%D0%9A%D0%B8%D0%B5%D0%B2.png?raw=true');
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       font-family: Arial, sans-serif;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .login-box {
-      background-color: rgba(255, 255, 255, 0.85);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.9);
       padding: 30px;
       border-radius: 10px;
+      box-shadow: 0 0 10px #00000060;
       text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
-    input {
+    input[type="text"],
+    input[type="password"] {
+      width: 90%;
       padding: 10px;
-      margin: 10px;
-      width: 200px;
-      border: 1px solid #aaa;
+      margin: 10px 0;
+      border: 1px solid #ccc;
       border-radius: 5px;
     }
 
-    button {
-      padding: 10px 20px;
-      border: none;
-      background-color: #4CAF50;
+    input[type="submit"] {
+      width: 95%;
+      padding: 10px;
+      background-color: #0066cc;
       color: white;
-      font-weight: bold;
-      cursor: pointer;
+      border: none;
       border-radius: 5px;
+      cursor: pointer;
     }
 
-    button:hover {
-      background-color: #45a049;
+    input[type="submit"]:hover {
+      background-color: #004d99;
+    }
+
+    #error {
+      color: red;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-
-  <div class="login-box" id="login-box">
+  <div class="login-box">
     <h2>Вхід</h2>
-    <input type="text" id="username" placeholder="Ім'я"><br>
-    <input type="password" id="password" placeholder="Пароль"><br>
-    <button onclick="login()">Увійти</button>
-    <p id="message" style="color: red;"></p>
+    <form onsubmit="return checkLogin()">
+      <input type="text" id="username" placeholder="Ім'я" required />
+      <input type="password" id="password" placeholder="Пароль" required />
+      <input type="submit" value="Увійти" />
+    </form>
+    <p id="error"></p>
   </div>
 
   <script>
-    // Автоматичний перехід, якщо вже був вхід
-    if (localStorage.getItem("authenticated") === "true") {
-      window.location.href = "home2.html";
-    }
-
-    function login() {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+    function checkLogin() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
 
       if (username === "Аліна" && password === "27.07.2024") {
-        localStorage.setItem("authenticated", "true");
-        window.location.href = "home2.html";
+        window.location.href = "main.html"; // файл, куди перенаправити після входу
+        return false;
       } else {
-        document.getElementById('message').innerText = "Невірне ім'я або пароль.";
+        document.getElementById("error").textContent = "Невірне ім'я або пароль";
+        return false;
       }
     }
   </script>
-
 </body>
 </html>
