@@ -8,11 +8,11 @@
     body {
       margin: 0;
       padding: 0;
-      background-image: url('https://github.com/AlinaMahnuk/AlinaMahnuk.github.io/blob/main/%D0%A7%D0%B5%D0%BC-%D0%B6%D0%B5-%D1%81%D1%82%D1%80%D0%B0%D1%85-%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%B0%D0%B5%D1%82%D1%81%D1%8F-%D0%BE%D1%82-%D1%82%D1%80%D0%B5%D0%B2%D0%BE%D0%B3%D0%B8.-%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3-%D0%9A%D0%B8%D0%B5%D0%B2.png?raw=true');
+      background-image: url('https://github.com/AlinaMahnuk/AlinaMahnuk.github.io/blob/main/sweden-6834164_1280.jpg?raw=true');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     .login-box {
@@ -73,6 +73,7 @@
       const password = document.getElementById('password').value.trim();
 
       if (username === "Аліна" && password === "27.07.2024") {
+        sessionStorage.setItem("loggedIn", "true");
         window.location.href = "home2.html";
         return false;
       } else {
