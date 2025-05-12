@@ -73,8 +73,7 @@
       const password = document.getElementById('password').value.trim();
 
       if (username === "Аліна" && password === "27.07.2024") {
-        localStorage.setItem("authenticated", "true");
-        window.location.href = "main.html";
+        window.location.href = "home2.html";
         return false;
       } else {
         document.getElementById("error").textContent = "Невірне ім'я або пароль";
