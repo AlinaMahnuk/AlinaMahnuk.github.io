@@ -7,58 +7,61 @@
     body {
       margin: 0;
       padding: 0;
-      background-image: url('https://github.com/AlinaMahnuk/AlinaMahnuk.github.io/blob/main/%D0%A7%D0%B5%D0%BC-%D0%B6%D0%B5-%D1%81%D1%82%D1%80%D0%B0%D1%85-%D0%BE%D1%82-%D0%BB%D0%B8%D1%87%D0%B0%D0%B5%D1%82%D1%81%D1%8F-%D0%BE%D1%82-%D1%82%D1%80%D0%B5%D0%B2%D0%BE%D0%B3%D0%B8.-%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3-%D0%9A%D0%B8%D0%B5%D0%B2.png?raw=true');
+      background-image: url('https://github.com/AlinaMahnuk/AlinaMahnuk.github.io/blob/main/sweden-6834164_1280.jpg?raw=true');
       background-size: cover;
       background-position: center;
       font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .login-box {
-      background: rgba(0, 0, 0, 0.7);
+      background-color: rgba(255, 255, 255, 0.85);
       padding: 30px;
       border-radius: 10px;
-      width: 300px;
-      margin: 150px auto;
-      color: white;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
-    input[type="text"], input[type="password"] {
-      width: 100%;
+    input {
       padding: 10px;
-      margin: 10px 0;
-      border: none;
+      margin: 10px;
+      width: 200px;
+      border: 1px solid #aaa;
       border-radius: 5px;
     }
     button {
-      width: 100%;
-      padding: 10px;
+      padding: 10px 20px;
+      border: none;
       background-color: #4CAF50;
       color: white;
-      border: none;
-      border-radius: 5px;
+      font-weight: bold;
       cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
   <div class="login-box">
     <h2>Вхід</h2>
-    <form onsubmit="checkLogin(event)">
-      <input type="text" id="username" placeholder="Імʼя" required>
-      <input type="password" id="password" placeholder="Пароль" required>
-      <button type="submit">Увійти</button>
-    </form>
+    <input type="text" id="username" placeholder="Ім'я"><br>
+    <input type="password" id="password" placeholder="Пароль"><br>
+    <button onclick="login()">Увійти</button>
+    <p id="message" style="color: red;"></p>
   </div>
 
   <script>
-    function checkLogin(event) {
-      event.preventDefault();
-      var username = document.getElementById('username').value.trim();
-      var password = document.getElementById('password').value.trim();
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
 
-      if (username === 'Аліна' && password === '27.07.2024') {
-        localStorage.setItem("access", "granted");
-        window.location.href = 'home2.html';
+      if (username === "Аліна" && password === "27.07.2024") {
+        window.location.href = "home2.html";
       } else {
-        alert('Неправильне імʼя або пароль.');
+        document.getElementById('message').innerText = "Невірне ім'я або пароль.";
       }
     }
   </script>
