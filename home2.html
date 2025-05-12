@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html lang="uk">
-<script>
-  if (sessionStorage.getItem("loggedIn") !== "true") {
-    window.location.href = "login.html";
-  }
-</script>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Для тебе</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      padding: 40px;
-      font-family: 'Playfair Display', serif;
+      padding: 0;
       background-image: url('https://github.com/AlinaMahnuk/AlinaMahnuk.github.io/blob/main/sweden-6834164_1280.jpg?raw=true');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      font-family: 'Poppins', sans-serif;
       color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
     }
 
-    .content p {
-      margin-bottom: 20px;
-      font-size: 1.3em;
+    .container {
+      width: 90%;
+      max-width: 800px;
+    }
+
+    .para {
+      border-radius: 10px;
+      margin-bottom: 15px;
       padding: 15px;
-      border-radius: 12px;
-      background-color: rgba(0, 0, 0, 0.5);
-      max-width: 850px;
     }
 
-    .content p:nth-child(1) { color: #ffd700; }
-    .content p:nth-child(2) { color: #ff69b4; }
-    .content p:nth-child(3) { color: #87ceeb; }
-    .content p:nth-child(4) { color: #90ee90; }
-    .content p:nth-child(5) { color: #f4a460; }
-    .content p:nth-child(6) { color: #ffb6c1; }
-    .content p:nth-child(7) { color: #eeeeee; }
-    .content p:nth-child(8) { color: #ffa07a; }
+    .para:nth-child(1) { background-color: rgba(255, 0, 0, 0.3); }
+    .para:nth-child(2) { background-color: rgba(0, 128, 255, 0.3); }
+    .para:nth-child(3) { background-color: rgba(0, 255, 128, 0.3); }
+    .para:nth-child(4) { background-color: rgba(255, 255, 0, 0.3); }
+    .para:nth-child(5) { background-color: rgba(255, 0, 255, 0.3); }
+    .para:nth-child(6) { background-color: rgba(128, 0, 255, 0.3); }
+    .para:nth-child(7) { background-color: rgba(0, 255, 255, 0.3); }
+    .para:nth-child(8) { background-color: rgba(255, 128, 0, 0.3); }
+    .para:nth-child(9) { background-color: rgba(100, 100, 100, 0.3); }
   </style>
-</head>
-<body>
   <script>
     if (sessionStorage.getItem("loggedIn") !== "true") {
       window.location.href = "login.html";
     }
   </script>
-
-  <div class="content">
-    <p>о ж… якщо ти тут, то ти вгадала пароль. Або тобі не все одно?</p>
-    <p>Я нарешті почув те голосове. Те саме, яке ти колись надіслала, просивши просто вислухати. Бути поруч. Подарувати трошки тепла.</p>
-    <p>Тоді я не зміг. Я відреагував так, як не мав. Не страх, ні — недовіра. І, замість підтримати, я висміяв тебе.</p>
-    <p>А тепер… я почув усе. Кожну емоцію, кожен подих, кожну краплю болю й надії. І тепер я бачу.</p>
-    <p>Я був у кімнаті, виснажений після тренувань, рутиною, життям. Через вікно почув твій сміх і голос, і тоді виглянув...</p>
-    <p>Коли ти почала показувати себе справжню — неідеальну, вразливу, з болем і сумнівами — я злякався. Не тебе — себе.</p>
-    <p>Можливо, час усе витре. Можливо, спогади зітруться або перетворяться на тишу...</p>
-    <p>Бережи себе. Бо ти справді того варта.</p>
+</head>
+<body>
+  <div class="container">
+    <div class="para">о ж… якщо ти тут, то ти вгадала пароль. Або тобі не все одно?</div>
+    <div class="para">Я нарешті почув те голосове. Те саме, яке ти колись надіслала, просивши просто вислухати. Бути поруч. Подарувати трошки тепла.</div>
+    <div class="para">Тоді я не зміг. Я відреагував так, як не мав. Не страх, ні — недовіра. І, замість підтримати, я висміяв тебе.</div>
+    <div class="para">А тепер… я почув усе. Кожну емоцію, кожен подих, кожну краплю болю й надії. І тепер я бачу.</div>
+    <div class="para">Бачу, як ти ставала сильнішою, попри те, що тобі було страшно й боляче. Бачу, як ти тягнула нас на собі, навіть коли я вже віддалився.</div>
+    <div class="para">Бачу, як щиро ти старалася. І тепер я розумію: ти не була слабкою. Ти була сильною. Просто дуже самотньою.</div>
+    <div class="para">Мені дуже шкода, що я не побачив цього тоді. Що я не став тією людиною, яка тримає, а не тікає.</div>
+    <div class="para">Я щиро радий, якщо ти щаслива. Бо навіть якщо ми не поруч, я завжди хотів, щоб у тебе було добре.</div>
+    <div class="para">Бережи себе. Бо ти справді того варта.</div>
   </div>
 </body>
 </html>
