@@ -4,6 +4,18 @@
   <meta charset="UTF-8">
   <title>Для тебе</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
+  <script>
+  // Перевірка доступу
+  document.addEventListener("DOMContentLoaded", function () {
+    const access = localStorage.getItem("access_granted");
+
+    // Якщо доступу нема — перекидає назад на login.html
+    if (access !== "true") {
+      window.location.href = "login.html";
+    }
+  });
+</script>
+
   <style>
     body {
       font-family: 'Roboto Slab', serif;
@@ -45,15 +57,7 @@
       text-align: center;
       margin-bottom: 30px;
     }
-  </style>
-  <script>
-    window.onload = function () {
-      const allowed = localStorage.getItem("access_granted");
-      if (allowed !== "true") {
-        window.location.href = "login.html";
-      }
-    };
-  </script>
+ 
 </head>
 <body>
      <div style="text-align: center; margin-top: 30px;">
