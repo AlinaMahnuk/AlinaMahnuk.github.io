@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Для тебе</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-image: url('https://github.com/AlinaMahnuk/AlinaMahnuk.github.io/blob/main/photo_2025-05-04_12-56-31%20(2).jpg?raw=true');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+    .content {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.8;
+      font-size: 18px;
+      white-space: pre-wrap;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+    .buttons a {
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      border: 1px solid white;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.3s;
+    }
+    .buttons a:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <p>Що ж, зараз 13.05.2025. Привіт. Це знову я.</p>
+    <p>Чесно кажучи, я хотів здатися. Хотів перестати програмувати цей сайт, не писати цього повідомлення для тебе... Але я вирішив іти до кінця.</p>
+    <p>Сьогодні вперше за останні дні зважувався — і дуже хвилювався. Через жорстку дієту, недостачу солі та цукру в мене з’явилися спазми й судоми. Я бігав 8 км — було дуже важко. Але я усміхався. Я почав любити цей біль і цю темряву. Мені так спокійніше...</p>
+    <p>У мене страшенно болить голова. І вже зовсім скоро я поїду на Чемпіонат України.</p>
+    <p>Послухай… Я справді шкодую про все, що зробив. Це не відпускає мене. Я живу з цим щодня, і воно гризе мене зсередини.</p>
+    <p>Але коли я згадую тебе — я усміхаюсь. Бо я вдячний тобі. За те, що ти зʼявилася в моєму житті. За ті моменти, які залишились у моїй душі. Це було справжнє. І важливе.</p>
+    <p>Зараз у мене проблеми в коледжі. Я пропускав заняття, бо скидав вагу перед попередніми турнірами. І тепер знову — ті ж самі збори, тренування. Сподіваюся, мене не відрахують…</p>
+    <p>А як у тебе з навчанням? Ти відчуваєш себе коханою? Щасливою? Я щиро сподіваюся, що так.</p>
+    <p>Мені потрібно йти... Попереду ще тренування, збори, вага... життя.</p>
+    <p>Просто хотів, щоб ти знала: я не забув. І навіть якщо це останнє повідомлення — воно щире.</p>
+    <p>Бережи себе.</p>
+  </div>
+
+  <div class="buttons">
+    <a href="nastupna.html">← Назад</a>
+    <a href="nastupna3.html">Далі →</a>
+  </div>
+
+  <script>
+    // Захист сторінки (той самий скрипт)
+    (function() {
+      const allowedUser = 'admin';
+      const allowedPass = 'admin';
+      const saved = sessionStorage.getItem('auth');
+      if (saved !== allowedUser + ':' + allowedPass) {
+        window.location.href = 'login.html';
+      }
+    })();
+  </script>
+</body>
+</html>
