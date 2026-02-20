@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Вхід</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://github.com/AlinaMahnuk/AlinaMahnuk.github.io/blob/main/sweden-6834164_1280.jpg?raw=true');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
+    .login-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00000060;
+      text-align: center;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      width: 95%;
+      padding: 10px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #004d99;
+    }
+
+    #error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Вхід</h2>
+    <form onsubmit="return checkLogin()">
+      <input type="text" id="username" placeholder="Ім'я" required />
+      <input type="password" id="password" placeholder="Пароль" required />
+      <input type="submit" value="Увійти" />
+    </form>
+    <p id="error"></p>
+  </div>
+
+  <script>
+    // Перевірка, чи вже зайшов користувач
+    if (localStorage.getItem("access_granted") === "true") {
+      window.location.href = "home2.html"; // автоматично перекидає, якщо вже ввів пароль
+    }
+
+    function checkLogin() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      // Тепер пароль можна змінити тут, наприклад "superpass"
+      if (username === "Аліна" && password === "superpass") {
+        localStorage.setItem("access_granted", "true");
+        window.location.href = "home2.html";
+        return false;
+      } else {
+        document.getElementById("error").textContent = "Невірне ім'я або пароль";
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
