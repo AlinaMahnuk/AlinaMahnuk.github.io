@@ -52,14 +52,14 @@
 
   <script>
     function goNext() {
-      // Встановлюємо, що доступ на сайті дозволено
+      // Встановлюємо, що користувач "увійшов" для інших сторінок
       localStorage.setItem("access_granted", "true");
-      // Перекидаємо на наступну сторінку
+      // Перекидаємо на home2.html
       window.location.href = "home2.html";
       return false;
     }
 
-    // Якщо користувач вже “увійшов”, одразу перекидаємо
+    // Якщо користувач уже натискав "Увійти", автоматично перекидаємо
     if (localStorage.getItem("access_granted") === "true") {
       window.location.href = "home2.html";
     }
