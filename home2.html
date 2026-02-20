@@ -32,5 +32,12 @@
   <h1>Home2</h1>
   <a href="nastupna.html">Перейти далі</a>
 
+  <script>
+    // Перевірка, чи користувач натискав "Увійти" на login.html
+    if (localStorage.getItem("access_granted") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+
 </body>
 </html>
